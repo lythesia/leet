@@ -1,0 +1,40 @@
+t  = l + m*c + r
+2t = l + n*c + r
+
+t  = (n-m)*c    n > m
+
+l                           c
+----------------------------*------------*
+                            |            |
+                            *------------*
+
+if l >= c: then m == 0 when meets
+el l < c : then m == 0 when meets
+
+so
+
+r + 2t 
+t
+
+r + 2t - t = m*c => r + t = m*c (r <= c)
+
+if c - r = even: 2t travels c-r at 0
+                  t travels (c-r)/2 at (c-r)/2
+                  then after another (c-r)/2 steps meets
+                  total (c-r) steps <= c
+           odd:  2t travels c-r+1 at 1
+                  t travels (c-r+1)/2 at (c-r+1)/2
+                  then after another (c-r+1)/2 - 1 steps meets
+                  total (c-r+1)/2 + (c-r+1)/2 - 1 = c-r steps <= c
+hence: totally t = c - r steps, or say m = 1 after t reach circle
+
+so:
+2t travels one more circle only, and t travels 0 circle
+
+ t = l + r
+2t = l + r + m*c + c
+
+l + r = m*c + c
+l = m*r + c - r: say first travels c-r then circles equiv to travels from 0 to l
+or say at r after circle start, travels circles, equiv to that from 0 to l
+so at r after circle start(the 1st meet point), both travels at 1 step can finally meet at l, the circle start 
