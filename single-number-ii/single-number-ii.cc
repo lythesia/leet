@@ -6,7 +6,7 @@ using namespace std;
  * A[0]: 0 1 ... 1 .. [0] ... 1  |
  * A[0]: 1 0 ... 1 .. [1] ... 1  |
  * A[0]: 0 0 ... 0 .. [1] ... 1  |
- * ...                         v
+ * ...                           v
  *
  * every number represented in binary foramt, we add numbers in downward direction, then:
  * 1. (digit sum) % 3 on each bit(see column in []) can only be 0 or 1, because those 3-time number adds upto 3k,
