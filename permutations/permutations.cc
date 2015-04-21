@@ -41,6 +41,16 @@ public:
         }
       }
     }
+
+  // dfs
+  void dfs(vi &n, size_t start, vvi ans) {
+    if (start == n.size()-1) ans.push_back(n);
+    else for(size_t i=start, i<n.size(); i++) {
+      swap(n[start], n[i]); 
+      dfs(n, start+1, ans); // new perms with fixed start
+      swap(n[start], n[i]); // restore
+    }
+  }
 };
 
 int main(int argc, const char *argv[])
