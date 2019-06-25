@@ -31,7 +31,7 @@ pub struct Solution {}
 use std::cmp;
 impl Solution {
     fn find_kth(x: &[i32], y: &[i32], k: usize) -> f64 {
-        if (x.len() > y.len()) {
+        if x.len() > y.len() {
             return Self::find_kth(y, x, k);
         }
         if x.is_empty() {
@@ -43,7 +43,7 @@ impl Solution {
             let k2 = k - k1;
             if x[k1 - 1] == y[k2 - 1] {
                 x[k1 - 1] as f64
-            } else if (x[k1 - 1] < y[k2 - 1]) {
+            } else if x[k1 - 1] < y[k2 - 1] {
                 Self::find_kth(&x[k1..], y, k2)
             } else {
                 Self::find_kth(x, &y[k2..], k1)
@@ -70,8 +70,8 @@ mod tests {
 
     #[test]
     fn test() {
-        //assert_eq!(Solution::find_median_sorted_arrays(vec![1, 3], vec![2]), 2.0);
-        //assert_eq!(Solution::find_median_sorted_arrays(vec![1, 2], vec![3, 4]), 2.5);
+        assert_eq!(Solution::find_median_sorted_arrays(vec![1, 3], vec![2]), 2.0);
+        assert_eq!(Solution::find_median_sorted_arrays(vec![1, 2], vec![3, 4]), 2.5);
         assert_eq!(Solution::find_median_sorted_arrays(vec![2], vec![]), 2.0);
     }
 }
