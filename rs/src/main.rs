@@ -25,6 +25,7 @@ fn main() {
         .filter(|&d| { d.value == "rust" })
         .next()
         .expect("problem has no rust support yet");
+    println!("Got: {}({})", problem.title, problem.difficulty);
 
     let file_name = problem.title_slug.replace("-", "_");
     let file_path = Path::new("./src/quests").join(format!("{}.rs", file_name));
