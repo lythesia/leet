@@ -8,15 +8,25 @@ mod problem;
 use std::env;
 use std::fs;
 use std::path::{Path};
-use std::io::Write;
+use std::io::{Read,Write};
 
 /// main() helps to generate the submission template .rs
 fn main() {
     let args: Vec<String> = env::args().collect();
-    if args.len() < 2 {
-        panic!("problem id must be provided");
-    }
-    let id = &args[1];
+
+    let mut nextf = fs::OpenOptions::new()
+        .read(true)
+        .write(true)
+        .open(".next")
+        .expect("open `.next' failed");
+    let mut next = String::new();
+    nextf.read_to_string(&mut next);
+
+    let id = if args.len() == 1 {
+        &next
+    } else {
+        &args[1]
+    };
     let id = id.parse::<u32>().expect(&format!("not a number: {}", id));
 
     let problem = problem::get_problem(id)
@@ -57,6 +67,8 @@ fn main() {
         .open("./src/quests.rs")
         .unwrap();
     writeln!(lib_file, "mod {};", file_name);
+
+    writeln!(nextf, "{}", id + 1);
 }
 
 fn parse_extra_use(code: &str) -> String {
