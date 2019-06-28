@@ -17,6 +17,7 @@ fn main() {
     let mut nextf = fs::OpenOptions::new()
         .read(true)
         .write(true)
+        .append(false)
         .open(".next")
         .expect("open `.next' failed");
     let mut next = String::new();
@@ -27,7 +28,7 @@ fn main() {
     } else {
         &args[1]
     };
-    let id = id.parse::<u32>().expect(&format!("not a number: {}", id));
+    let id = id.trim().parse::<u32>().expect(&format!("not a number: {}", id));
 
     let problem = problem::get_problem(id)
         .expect(&format!("problem #{} not found", id));
