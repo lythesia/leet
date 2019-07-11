@@ -8,7 +8,7 @@ mod problem;
 use std::env;
 use std::fs;
 use std::path::{Path};
-use std::io::{Read,Write};
+use std::io::{Read,Seek,SeekFrom,Write};
 
 /// main() helps to generate the submission template .rs
 fn main() {
@@ -69,6 +69,7 @@ fn main() {
         .unwrap();
     writeln!(lib_file, "mod {};", file_name);
 
+    nextf.seek(SeekFrom::Start(0)).expect(".next seek");
     writeln!(nextf, "{}", id + 1);
 }
 
