@@ -31,7 +31,7 @@ pub fn get_problem(id: u32) -> Option<Problem> {
                 title: problem.stat.question_title.clone().unwrap(),
                 title_slug: problem.stat.question_title_slug.clone().unwrap(),
                 code_definition: serde_json::from_str( & resp.data.question.code_definition).unwrap(),
-                content: dissolve::strip_html_tags(&resp.data.question.content).join(""),
+                content: dissolve::strip_html_tags(&resp.data.question.content).join("").replace("\n\n", "\n"),
                 sample_test_case: resp.data.question.sample_test_case,
                 difficulty: problem.difficulty.to_string(),
             })
