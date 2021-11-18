@@ -7,18 +7,19 @@ mod problem;
 
 use std::env;
 use std::fs;
-use std::path::{Path};
+use std::path::Path;
 use std::io::{Read,Seek,SeekFrom,Write};
 
 /// main() helps to generate the submission template .rs
 fn main() {
     let args: Vec<String> = env::args().collect();
+    let cwd = env::var("CARGO_MANIFEST_DIR").unwrap();
 
     let mut nextf = fs::OpenOptions::new()
         .read(true)
         .write(true)
         .append(false)
-        .open(".next")
+        .open(Path::new(&cwd).join(".next"))
         .expect("open `.next' failed");
     let mut next = String::new();
     nextf.read_to_string(&mut next);
@@ -39,12 +40,12 @@ fn main() {
     println!("Got: {}({})", problem.title, problem.difficulty);
 
     let file_name = problem.title_slug.replace("-", "_");
-    let file_path = Path::new("./src/quests").join(format!("{}.rs", file_name));
+    let file_path = Path::new(&cwd).join("src").join("quests").join(format!("{}.rs", file_name));
     if file_path.exists() {
         panic!("problem already initialized");
     }
 
-    let template = fs::read_to_string("./template.rs").unwrap();
+    let template = fs::read_to_string(Path::new(&cwd).join("template.rs")).unwrap();
     let source = template
         .replace("__PROBLEM_TITLE__", &problem.title)
         .replace("__PROBLEM_DESC__", &problem.content)
@@ -65,7 +66,7 @@ fn main() {
     let mut lib_file = fs::OpenOptions::new()
         .write(true)
         .append(true)
-        .open("./src/quests.rs")
+        .open(Path::new(&cwd).join("src").join("quests.rs"))
         .unwrap();
     writeln!(lib_file, "mod {};", file_name);
 
