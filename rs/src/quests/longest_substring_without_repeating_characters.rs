@@ -34,12 +34,26 @@ pub struct Solution {}
 
 impl Solution {
     pub fn length_of_longest_substring(s: String) -> i32 {
-        let mut r = String::new();
+        // let mut r = String::new();
+        // let mut ans = 0;
+        // for c in s.chars() {
+        //     match r.find(c) {
+        //         Some(i) => { r.drain(..i+1); r.push(c); println!("{} => {}", c, r); },
+        //         _ => { r.push(c); println!("{} => {}", c, r); ans = cmp::max(ans, r.len() as i32); }
+        //     }
+        // }
+        // ans
+
+        // less memory
+        let (mut i, mut j) = (0, 0);
         let mut ans = 0;
-        for c in s.chars() {
-            match r.find(c) {
-                Some(i) => { r.drain(..i+1); r.push(c); println!("{} => {}", c, r); },
-                _ => { r.push(c); println!("{} => {}", c, r); ans = cmp::max(ans, r.len() as i32); }
+        for ch in s.chars() {
+            if let Some(y) = &s[i..j].find(ch) {
+                i += (y + 1);
+                j += 1;
+            } else {
+                j += 1;
+                ans = std::cmp::max(ans, (j - i) as i32);
             }
         }
         ans
@@ -55,6 +69,7 @@ mod tests {
     #[test]
     fn test() {
         assert_eq!(Solution::length_of_longest_substring("pwwkew".to_string()), 3);
-        assert_eq!(Solution::length_of_longest_substring("aabaab!bb".to_string()), 2);
+        assert_eq!(Solution::length_of_longest_substring("aabaab!bb".to_string()), 3);
+        assert_eq!(Solution::length_of_longest_substring("".to_string()), 0);
     }
 }

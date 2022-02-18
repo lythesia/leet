@@ -21,7 +21,7 @@ const QUESTION_QUERY_OPERATION: &str = "questionData";
 pub fn get_problem(id: u32) -> Option<Problem> {
     let problems = get_problems().unwrap();
     for problem in problems.stat_status_pairs.iter() {
-        if problem.stat.question_id == id {
+        if problem.stat.frontend_question_id == id {
             let client = reqwest::Client::new();
             let resp: RawProblem = client.post(GRAPHQL_URL)
                 .json(&Query::question_query(problem.stat.question_title_slug.as_ref().unwrap()))
