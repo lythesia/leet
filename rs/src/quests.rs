@@ -24,3 +24,4 @@ mod add_two_numbers_ii;
 mod add_to_array_form_of_integer;
 mod subarrays_with_k_different_integers;
 mod maximum_erasure_value;
+mod minimum_swaps_to_group_all_1s_together_ii;

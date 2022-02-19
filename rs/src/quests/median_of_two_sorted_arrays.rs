@@ -51,13 +51,52 @@ impl Solution {
         }
     }
 
+    fn kth(x: &[i32], y: &[i32], k: usize) -> f64 {
+        // [x] <= [y]
+        if x.len() > y.len() {
+            Self::kth(y, x, k)
+        // exit_1: one's empty
+        } else if x.is_empty() {
+            y[k - 1] as f64
+        // exit_2: k >= 1 always, so k at least 1
+        } else if k == 1 {
+            std::cmp::min(x[0], y[0]) as f64
+        } else {
+            /*
+            find kth in union(x, y)
+            x: [x_1.. x_k/2.. xm]
+            y: [y_1..    y_k/2 ..  ym]
+            if x_k/2 < y_k/2
+            then both x': [x_1 .. x_k/2] k/2 numbers of x < y_k/2
+                 and y': [y_1 .. y_(k/2-1)] k/2-1 numbers of y < y_k/2
+            even merge(x', y') has k-1 numbers which < kth of merge(x, y)
+            so kth must be in merge of x'':[x_(k/2+1) .. xm] and y (because we cant tell <> between x'' and y')
+            and should be (k - k/2)th of merge(x'', y)
+            {}
+            else
+            the verse
+            */
+            let k1 = std::cmp::min(k/2, x.len()); 
+            let k2 = k - k1;
+            // exit_3: just bingo
+            if x[k1 - 1] == y[k2 - 1] {
+                x[k1 - 1] as f64
+            } else if x[k1 - 1] < y[k2 - 1] {
+                Self::kth(&x[k1..], y, k2)
+            } else {
+                Self::kth(x, &y[k2..], k1)
+            }
+        }
+    }
+
     pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
-        let n = nums1.len() + nums2.len();
+        let n = nums1.len() + nums2.len(); // n >= 2
         let (x, y) = (nums1.as_slice(), nums2.as_slice());
         if n & 1 == 1 { // odd
-            Self::find_kth(x, y, n/2 + 1)
+            Self::kth(x, y, n/2 + 1) // k >= 2
         } else {
-            (Self::find_kth(x, y, n/2) + Self::find_kth(x, y, n/2 + 1))/2.0
+            //                    k >= 1                         k >= 2
+            (Self::kth(x, y, n/2) + Self::kth(x, y, n/2 + 1))/2.0
         }
     }
 }
