@@ -29,6 +29,91 @@ pub struct Solution {}
 
 use std::cmp;
 impl Solution {
+    /*
+    Manachar:
+    S: insert # between each char
+    P: longest len of a Pali extend to left(or right), with S[i] included
+    given:
+       [  1   2   2   1   2   3   2   1  ]
+    S: [# 1 # 2 # 2 # 1 # 2 # 3 # 2 # 1 #]
+    P: [1 2 1 2 5 2 1 4 1 2 1 6 1 2 1 2 1], thus P[i] - 1 = len of Pali(cetered at i)
+    (assume n = actual len of Pali, all(left to right) = n + (n + 1), P[i] = n + 1, then n = P[i] - 1)
+    mx = id + P[i]
+    mx: i之前的最长P: Pali的最远的点
+    id: P的中心
+
+    一般情况:
+    A. i >= mx:
+        j   mx'     id     mx   i        <- i and j are symmetirc to id, so are mx and mx'
+    ----+----+------+------+----+--------
+    P[i]只能通过最朴素的Pali定义的方式来计算
+
+    可推导情况:
+    B. i < mx:
+
+       mx'   j     id      i   mx        <- i and j are symmetirc to id, so are mx and mx'
+    ----+----+------+------+----+--------
+
+    extending mx until S end
+    [mx' to mx]是一个以id为中心的最长Pali, 那么以i为中心的, 且边界不超过mx的Pali一定在[mx' to id]中
+
+    1. if mx - i > P[j]: P[i] = P[j]
+    2. if mx - i <= P[j]:
+        P[i] = mx - i, 然后再进行朴素计算, 因为mx'左边的已经不包括在P[j]中了
+    (朴素计算: while A[i - P[i]] == A[i + P[i]]: P[i]++)
+    */
+    pub fn longest_pali(s: String) -> String {
+        let n = s.len();
+        if n == 0 { return s; }
+        let nn = 2*n+1;
+        let mut ss = String::with_capacity(2*(n + 1));
+        ss.push('^');
+        for c in s.chars() {
+            ss.push('#');
+            ss.push(c);
+        }
+        ss.push_str("#$");
+
+        let mut p = [0; 2002];
+        let (mut id, mut mx) = (0usize, 0usize);
+        let (mut s, mut e, mut mmax) = (0usize, 0usize, 0usize);
+        for i in 1..nn {
+            let mut pi = 
+            // B
+            if i < mx {
+                let j = id*2 - i;
+                // B.1
+                if mx - i + 1 > p[j] { p[j] }
+                // B.2
+                else { mx - i + 1 }
+            }
+            // A
+            else {
+                1
+            };
+            // trivial compute
+            let slice = ss.as_bytes();
+            while slice[i - pi] == slice[i + pi] { pi += 1; }
+            p[i] = pi;
+            // update id and mx
+            if i + p[i] - 1 > mx {
+                mx = i + p[i] - 1;
+                id = i;
+            }
+            // update index and mmax
+            if p[i] > mmax {
+                mmax = p[i];
+                s = i - mmax + 1;
+                e = i + mmax - 1;
+            }
+        }
+        let mut ans = String::with_capacity(mmax - 1);
+        for c in ss[s..e].chars() {
+            if c != '#' { ans.push(c); }
+        }
+
+        ans
+    }
     pub fn longest_palindrome(s: String) -> String {
         let n = s.len();
         if n == 0 {
@@ -110,7 +195,7 @@ mod tests {
             "",
         ];
         for (i, o) in q.into_iter().zip(a) {
-            assert_eq!(Solution::longest_palindrome(i.to_owned()), o);
+            assert_eq!(Solution::longest_pali(i.to_owned()), o);
         }
     }
 }

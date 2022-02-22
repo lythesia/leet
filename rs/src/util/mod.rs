@@ -6,3 +6,5 @@ pub mod vec_string;
 pub mod tree;
 #[macro_use]
 pub mod point;
+#[macro_use]
+pub mod vec_vec;
