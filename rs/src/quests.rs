@@ -44,3 +44,8 @@ mod delete_duplicate_folders_in_system;
 mod find_duplicate_file_in_system;
 mod valid_tic_tac_toe_state;
 mod find_words_that_can_be_formed_by_characters;
+mod binary_search;
+mod first_bad_version;
+mod search_insert_position;
+mod squares_of_a_sorted_array;
+mod rotate_array;
