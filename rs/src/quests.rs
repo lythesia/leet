@@ -49,3 +49,5 @@ mod first_bad_version;
 mod search_insert_position;
 mod squares_of_a_sorted_array;
 mod rotate_array;
+mod flood_fill;
+mod number_of_islands;
