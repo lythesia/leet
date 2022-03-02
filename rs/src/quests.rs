@@ -51,3 +51,4 @@ mod squares_of_a_sorted_array;
 mod rotate_array;
 mod flood_fill;
 mod number_of_islands;
+mod move_zeroes;
