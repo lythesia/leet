@@ -24,7 +24,6 @@ pub struct Solution {}
 // submission codes start here
 
 impl Solution {
-
     // i to 0, j to none-0, swap until end
     pub fn move_zeroes(nums: &mut Vec<i32>) {
         // if let Some(mut i) = nums.iter().position(|&x| x == 0) {

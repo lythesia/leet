@@ -52,3 +52,6 @@ mod rotate_array;
 mod flood_fill;
 mod number_of_islands;
 mod move_zeroes;
+mod merge_sorted_array;
+mod number_of_1_bits;
+mod subtract_the_product_and_sum_of_digits_of_an_integer;
