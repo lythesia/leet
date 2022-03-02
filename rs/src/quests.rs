@@ -55,3 +55,7 @@ mod move_zeroes;
 mod merge_sorted_array;
 mod number_of_1_bits;
 mod subtract_the_product_and_sum_of_digits_of_an_integer;
+mod climbing_stairs;
+mod min_cost_climbing_stairs;
+mod max_area_of_island;
+mod number_of_closed_islands;
