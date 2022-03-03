@@ -66,3 +66,8 @@ mod intersection_of_two_arrays_ii;
 mod best_time_to_buy_and_sell_stock;
 mod largest_perimeter_triangle;
 mod find_nearest_point_that_has_the_same_x_or_y_coordinate;
+mod house_robber;
+mod house_robber_ii;
+mod delete_and_earn;
+mod number_of_enclaves;
+mod count_sub_islands;
