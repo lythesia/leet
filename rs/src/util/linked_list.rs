@@ -1,4 +1,4 @@
-#[derive(PartialEq, Eq, Debug)]
+#[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
     pub val: i32,
     pub next: Option<Box<ListNode>>
@@ -23,6 +23,15 @@ pub fn to_list(vec: Vec<i32>) -> Option<Box<ListNode>> {
         current = Some(Box::new(node));
     }
     current
+}
+
+pub fn disp_list(mut l: &Option<Box<ListNode>>) {
+    let mut v = vec![];
+    while let Some(x) = l {
+        v.push(x.val);
+        l = &x.next;
+    }
+    println!("{:?}", v);
 }
 
 #[macro_export]
