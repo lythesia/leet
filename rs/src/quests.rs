@@ -79,3 +79,7 @@ mod sign_of_the_product_of_an_array;
 mod can_make_arithmetic_progression_from_sequence;
 mod happy_number;
 mod check_if_one_string_swap_can_make_strings_equal;
+mod jump_game;
+mod jump_game_ii;
+mod as_far_from_land_as_possible;
+mod pacific_atlantic_water_flow;
