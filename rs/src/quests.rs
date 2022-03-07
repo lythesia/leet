@@ -83,3 +83,8 @@ mod jump_game;
 mod jump_game_ii;
 mod as_far_from_land_as_possible;
 mod pacific_atlantic_water_flow;
+mod permutation_in_string;
+mod valid_sudoku;
+mod search_a_2d_matrix;
+mod next_greater_element_i;
+mod check_if_it_is_a_straight_line;
