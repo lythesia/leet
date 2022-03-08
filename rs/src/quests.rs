@@ -91,3 +91,8 @@ mod check_if_it_is_a_straight_line;
 mod maximum_sum_circular_subarray;
 mod shortest_path_in_binary_matrix;
 mod zero_one_matrix;
+mod first_unique_character_in_a_string;
+mod ransom_note;
+mod valid_anagram;
+mod sum_of_all_odd_length_subarrays;
+mod richest_customer_wealth;
