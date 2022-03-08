@@ -28,10 +28,10 @@ pub struct Solution {
     is_bad: fn(i32) -> bool,
 }
 trait IsBad {
-    fn isBadVersion(&self, x: i32) -> bool;
+    fn is_bad(&self, x: i32) -> bool;
 }
 impl IsBad for Solution {
-    fn isBadVersion(&self, x: i32) -> bool {
+    fn is_bad(&self, x: i32) -> bool {
         (self.is_bad)(x)
     }
 }
@@ -51,7 +51,7 @@ impl Solution {
         let (mut s, mut e) = (1, n);
         while s <= e {
             let m = s + (e-s)/2;
-            if self.isBadVersion(m) { e = m - 1; }
+            if self.is_bad(m) { e = m - 1; }
             else { s = m + 1; }
         }
         s

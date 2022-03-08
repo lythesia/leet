@@ -88,3 +88,6 @@ mod valid_sudoku;
 mod search_a_2d_matrix;
 mod next_greater_element_i;
 mod check_if_it_is_a_straight_line;
+mod maximum_sum_circular_subarray;
+mod shortest_path_in_binary_matrix;
+mod zero_one_matrix;
