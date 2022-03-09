@@ -96,3 +96,7 @@ mod ransom_note;
 mod valid_anagram;
 mod sum_of_all_odd_length_subarrays;
 mod richest_customer_wealth;
+mod maximum_product_subarray;
+mod maximum_length_of_subarray_with_positive_product;
+mod shortest_bridge;
+mod nearest_exit_from_entrance_in_maze;
