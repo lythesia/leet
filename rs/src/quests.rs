@@ -100,3 +100,6 @@ mod maximum_product_subarray;
 mod maximum_length_of_subarray_with_positive_product;
 mod shortest_bridge;
 mod nearest_exit_from_entrance_in_maze;
+mod merge_two_sorted_lists;
+mod remove_linked_list_elements;
+mod matrix_diagonal_sum;
