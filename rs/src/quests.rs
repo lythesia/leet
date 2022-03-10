@@ -103,3 +103,7 @@ mod nearest_exit_from_entrance_in_maze;
 mod merge_two_sorted_lists;
 mod remove_linked_list_elements;
 mod matrix_diagonal_sum;
+mod best_sightseeing_pair;
+mod best_time_to_buy_and_sell_stock_ii;
+mod all_paths_from_source_to_target;
+mod keys_and_rooms;
