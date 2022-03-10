@@ -113,3 +113,7 @@ mod remove_duplicates_from_sorted_list;
 mod merge_strings_alternately;
 mod goal_parser_interpretation;
 mod find_the_difference;
+mod best_time_to_buy_and_sell_stock_with_cooldown;
+mod best_time_to_buy_and_sell_stock_with_transaction_fee;
+mod number_of_provinces;
+mod number_of_operations_to_make_network_connected;
