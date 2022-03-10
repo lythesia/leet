@@ -13,11 +13,11 @@ public:
    *
    *    mx'   j     id      i   mx        <- i and j are symmetirc to id, so are mx and mx'
    * ----+----+------+------+----+--------
-   * 
+   *
    * 1. P[i] = P[j] if mx - i > P[j]: pali center with S[j] is included within S[id], so is S[i] (since symmetirc,
    *    S[i] is also pali, and S[i] at MOST extend to mx)
    * 2. P[i] = mx - i elsif mx - i <= P[j]: pali center with S[j] maybe not included with S[id], due to symmetirc
-   *    S[i] as pali, at LEAST extend to mx, or say P[i] >= mx - i, but we do not know whether after wx is also
+   *    S[i] as pali, at LEAST extend to mx, or say P[i] >= mx - i, but we do not know whether after mx is also
    *    pali, because only thing we sure is [mx', mx] is pali, so we take the least right is [2i-mx, mx] is a
    *    valid pali.
    * 3. P[i] = 1 if mx <= i which is trivial
