@@ -158,3 +158,8 @@ mod pascals_triangle_ii;
 mod minimum_genetic_mutation;
 mod open_the_lock;
 mod word_ladder;
+mod search_in_a_binary_search_tree;
+mod insert_into_a_binary_search_tree;
+mod minimum_falling_path_sum;
+mod find_the_town_judge;
+mod minimum_number_of_vertices_to_reach_all_nodes;
