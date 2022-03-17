@@ -57,7 +57,27 @@ use super::super::util::tree::{TreeNode, to_tree};
 // }
 use std::rc::Rc;
 use std::cell::RefCell;
+use std::collections::HashSet;
 impl Solution {
+    // simple ver:
+    fn helper(root: Option<Rc<RefCell<TreeNode>>>, k: i32, set: &mut HashSet<i32>) -> bool {
+        if let Some(root) = root {
+            let val = root.borrow().val;
+            if set.contains(&(k - val)) { true }
+            else {
+                set.insert(val);
+                let left = root.borrow_mut().left.take();
+                let right = root.borrow_mut().right.take();
+                Self::find_target(left, k) || Self::find_target(right, k)
+            }
+        } else { false }
+    }
+    pub fn find_target(root: Option<Rc<RefCell<TreeNode>>>, k: i32) -> bool {
+        let mut set: HashSet<i32> = HashSet::new();
+        Self::helper(root, k, &mut set)
+    }
+
+    /*
     pub fn find_target(root: Option<Rc<RefCell<TreeNode>>>, k: i32) -> bool {
         let dummy = Rc::new(RefCell::new(TreeNode::new(0)));
         dummy.borrow_mut().left = root.clone();
@@ -101,6 +121,7 @@ impl Solution {
             root = node.borrow().right.clone();
         }
     }
+ */
 }
 
 // submission codes end
