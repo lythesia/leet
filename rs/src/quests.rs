@@ -176,3 +176,7 @@ mod possible_bipartition;
 mod is_graph_bipartite;
 mod unique_paths;
 mod unique_paths_ii;
+mod minimum_path_sum;
+mod maximal_square;
+mod longest_increasing_subsequence;
+mod wiggle_subsequence;
