@@ -180,3 +180,5 @@ mod minimum_path_sum;
 mod maximal_square;
 mod longest_increasing_subsequence;
 mod wiggle_subsequence;
+mod is_subsequence;
+mod edit_distance;
