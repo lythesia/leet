@@ -182,3 +182,5 @@ mod longest_increasing_subsequence;
 mod wiggle_subsequence;
 mod is_subsequence;
 mod edit_distance;
+mod coin_change;
+mod coin_change_2;
