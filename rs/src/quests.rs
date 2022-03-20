@@ -184,3 +184,6 @@ mod is_subsequence;
 mod edit_distance;
 mod coin_change;
 mod coin_change_2;
+mod combination_sum_iv;
+mod integer_break;
+mod perfect_squares;
