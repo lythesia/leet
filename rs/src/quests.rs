@@ -187,3 +187,4 @@ mod coin_change_2;
 mod combination_sum_iv;
 mod integer_break;
 mod perfect_squares;
+mod smallest_string_with_a_given_numeric_value;

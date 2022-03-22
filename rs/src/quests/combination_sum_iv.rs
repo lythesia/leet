@@ -56,9 +56,20 @@ impl Solution {
             ans
         }
     }
+
     pub fn combination_sum4(nums: Vec<i32>, target: i32) -> i32 {
-        let mut memo = vec![-1; target as usize + 1];
-        Self::dfs(&nums, target as usize, &mut memo)
+        // let mut memo = vec![-1; target as usize + 1];
+        // Self::dfs(&nums, target as usize, &mut memo)
+
+        // dp ver derived from memo-dfs
+        let t = target as usize;
+        let mut dp = vec![0; t + 1];
+        dp[0] = 1;
+        for i in 1..=t {
+            // dp[i] = sum { dp[t - a[i]] } for each a[i]
+            dp[i] = nums.iter().filter(|&&x| x as usize <= i).map(|&x| dp[i - x as usize]).sum();
+        }
+        dp[t]
     }
 }
 
