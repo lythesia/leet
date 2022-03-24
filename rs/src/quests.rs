@@ -188,3 +188,5 @@ mod combination_sum_iv;
 mod integer_break;
 mod perfect_squares;
 mod smallest_string_with_a_given_numeric_value;
+mod broken_calculator;
+mod boats_to_save_people;
