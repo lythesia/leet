@@ -207,3 +207,8 @@ mod linked_list_in_binary_tree;
 mod multiply_strings;
 mod majority_element;
 mod three_sum;
+mod remove_duplicates_from_sorted_list_ii;
+mod add_binary;
+mod sort_colors;
+mod merge_intervals;
+mod design_hashmap;
