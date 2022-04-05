@@ -238,3 +238,6 @@ mod next_greater_element_iii;
 mod surrounded_regions;
 mod word_pattern;
 mod partition_labels;
+mod group_anagrams;
+mod subsets;
+mod subsets_ii;
