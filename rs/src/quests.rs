@@ -241,3 +241,8 @@ mod partition_labels;
 mod group_anagrams;
 mod subsets;
 mod subsets_ii;
+mod permutations_ii;
+mod combination_sum;
+mod combination_sum_ii;
+mod repeated_dna_sequences;
+mod three_sum_with_multiplicity;
