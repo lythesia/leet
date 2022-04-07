@@ -246,3 +246,8 @@ mod combination_sum;
 mod combination_sum_ii;
 mod repeated_dna_sequences;
 mod three_sum_with_multiplicity;
+mod smallest_range_ii;
+mod letter_combinations_of_a_phone_number;
+mod generate_parentheses;
+mod word_search;
+mod last_stone_weight;
