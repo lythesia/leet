@@ -251,3 +251,5 @@ mod letter_combinations_of_a_phone_number;
 mod generate_parentheses;
 mod word_search;
 mod last_stone_weight;
+mod reorder_list;
+mod kth_largest_element_in_a_stream;
