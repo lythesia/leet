@@ -253,3 +253,6 @@ mod word_search;
 mod last_stone_weight;
 mod reorder_list;
 mod kth_largest_element_in_a_stream;
+mod swap_nodes_in_pairs;
+mod design_linked_list;
+mod top_k_frequent_elements;
