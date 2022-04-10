@@ -256,3 +256,7 @@ mod kth_largest_element_in_a_stream;
 mod swap_nodes_in_pairs;
 mod design_linked_list;
 mod top_k_frequent_elements;
+mod rotate_list;
+mod binary_search_tree_iterator;
+mod reverse_nodes_in_k_group;
+mod baseball_game;
