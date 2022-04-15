@@ -41,7 +41,7 @@ pub struct Solution {}
 // submission codes start here
 
 impl Solution {
-    // f(n, m) = (f(n-1, m) + m)%n
+    // 约瑟夫环(从0开始): f(n, m) = (f(n-1, m) + m)%n
     pub fn find_the_winner(n: i32, k: i32) -> i32 {
         let mut ans = 0;
         for i in 2..=n {

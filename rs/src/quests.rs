@@ -280,3 +280,7 @@ mod insert_delete_getrandom_o1;
 mod design_circular_queue;
 mod my_calendar_i;
 mod kth_smallest_element_in_a_bst;
+mod bitwise_and_of_numbers_range;
+mod lowest_common_ancestor_of_a_binary_tree;
+mod serialize_and_deserialize_binary_tree;
+mod trim_a_binary_search_tree;
