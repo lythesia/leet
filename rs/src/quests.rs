@@ -284,3 +284,5 @@ mod bitwise_and_of_numbers_range;
 mod lowest_common_ancestor_of_a_binary_tree;
 mod serialize_and_deserialize_binary_tree;
 mod trim_a_binary_search_tree;
+mod shuffle_an_array;
+mod convert_bst_to_greater_tree;
