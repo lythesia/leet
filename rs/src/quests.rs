@@ -290,3 +290,4 @@ mod max_points_on_a_line;
 mod kth_largest_element_in_an_array;
 mod increasing_order_search_tree;
 mod sort_characters_by_frequency;
+mod recover_binary_search_tree;
